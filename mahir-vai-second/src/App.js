@@ -37,6 +37,21 @@ function App() {
 
 
 
+
+
+        <BioData
+          name="AMBIKA BISWAS"
+          email="AMBIKABISWAS2648@GMAIL.COM"
+          phone="9023227284"
+          skill={["DESIGN", "PHOTOSHOP", "JAVASCRIPT","BOOTSTRAP","REACT"]}
+          qualification={[
+            "10TH STANDARD IN BUSINESS",
+            "12TH STD.",
+          ]}
+          interest={["PLAYING GUITER", "SOLVING SUDUKU"]}
+          reference="ROBIN BISWAS*******"
+        />
+
       </div>
     </div>
   );

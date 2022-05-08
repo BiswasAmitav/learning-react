@@ -2,7 +2,7 @@ function BioData(props) {
     console.table(props);
   return (
     <div className="bio-data">
-      <h1>Bio Data of {props.name}</h1>
+      <h1>BIO DATA FOR  {props.name}</h1>
 
       <hr />
 

@@ -53,32 +53,32 @@ const decrease=(data)=>{
 
 
 
-     <button onClick={increase}>
+     <button onClick={()=>increase(1)}>
        Increase By One 
      </button>
 
      
-     <button onClick={increase}>
+     <button onClick={()=>increase(5)}>
        Increase By 5
      </button>
 
      
-     <button onClick={increase}>
+     <button onClick={()=>increase(100)}>
        Increase By 100
      </button>
 
 
 
-     <button onClick={decrease}>
+     <button onClick={()=>decrease(1)}>
        Decrease By ONe 
      </button>
 
 
-     <button onClick={decrease}>
+     <button onClick={()=>decrease(5)}>
        Decrease By 5
      </button>
 
-     <button onClick={decrease}>
+     <button onClick={()=>decrease(100)}>
        Decrease By 100 
      </button>
     </div>

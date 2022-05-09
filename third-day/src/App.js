@@ -1,23 +1,86 @@
 import logo from './logo.svg';
 import './App.css';
+import {useState} from 'react';
+
+
 
 function App() {
+
+const [counter,setCounter]=useState(100);
+
+
+const increase=(data)=>{
+  // let temp=counter+1;
+  setCounter(counter+data);
+}
+
+
+
+const decrease=(data)=>{
+  setCounter(counter-data)
+}
+
+  //THIS IS THE LOGIC FOR INCREMENT OR DECREMENT ..........
+  // let counter=0;
+  // const increase=()=>{
+  //   counter++;
+  //   console.log(counter);
+  // }
+
+
+  // const decrease=()=>{
+  //   counter--;
+  //   console.log(counter);
+  // }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <h1>The value of the counter is: {counter}</h1>
+     <hr/>
+
+
+      {/* ITS A SIMPL FUNCTION FOR ONE TYPE BUTTON... */}
+
+      {/* <button onClick={increase}>
+       Increase By 100
+     </button>
+
+
+
+     <button onClick={decrease}>
+       Decrease By ONe 
+     </button>  */}
+
+
+
+     <button onClick={increase}>
+       Increase By One 
+     </button>
+
+     
+     <button onClick={increase}>
+       Increase By 5
+     </button>
+
+     
+     <button onClick={increase}>
+       Increase By 100
+     </button>
+
+
+
+     <button onClick={decrease}>
+       Decrease By ONe 
+     </button>
+
+
+     <button onClick={decrease}>
+       Decrease By 5
+     </button>
+
+     <button onClick={decrease}>
+       Decrease By 100 
+     </button>
     </div>
   );
 }

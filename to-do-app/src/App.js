@@ -1,6 +1,8 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+
 
 function App() {
   const [todoTitle, setTodoTitle] = useState(""); //FOR GETTING THE VALUE FORM USERS.....
@@ -23,6 +25,15 @@ function App() {
         isComplete: false,
       };
 
+      fetch("http://localhost:3000/todoList",{
+        method:'POST',
+        body:JSON.stringify(newTodo),
+        headers:{
+          'Content-type':'application/json'
+        },
+      })
+        .then(response =>response.json())
+        .then(data =>console.log(data));
 
       setTodoList([...todoList, newTodo]);//by this line we're adding new list ..but before that we have to keep previous lists as well for that i used .../ sprade operator...
       setTodoTitle("");
@@ -34,7 +45,7 @@ function App() {
     }
   };
 
-  
+
   // FUNCTION FOR DELETE OPERATION ON APP......
   const deleteTodoHandler = (id) => {
     const newTodoList = todoList.filter((item) => item.id !== id);
@@ -65,6 +76,16 @@ function App() {
     setTodoTitle("");
     editableTodo(null);
   };
+
+//to get data from third party API....
+
+useEffect(()=>{
+  fetch("http://localhost:3000/todoList")
+  .then((response)=>response.json())
+  .then(data =>setTodoList(data))
+},[])
+
+
 
   return (
     <div className="App">

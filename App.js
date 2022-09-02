@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import React, {useState} from 'react';
 
 function App() {
 
@@ -15,6 +16,9 @@ function App() {
   console.log(productNames);
   return (
     <div className="App">
+      <p> I am Nayok form react...</p>
+      <Counter></Counter>
+
       <Product name={products[0].name} price={products[0].price}></Product>
       <Nayok></Nayok>
       {/* <Product>{products[0]}</Product> */}
@@ -62,6 +66,17 @@ function Nayok(){
         <li>{nayok[2]}</li>
       </ul>
     </div>
+  )
+}
+
+function Counter(){
+  const [count, setCount]=useState(0);
+  const handleAdd=()=>console.log('clicked')
+  return(
+  <div>
+    <h1>Count : {count} </h1>
+    <button onClick={handleAdd}> Add </button>
+  </div>
   )
 }
 

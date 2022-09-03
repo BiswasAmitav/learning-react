@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 function App() {
 
@@ -18,6 +18,7 @@ function App() {
     <div className="App">
       <p> I am Nayok form react...</p>
       <Counter></Counter>
+      <Users></Users>
 
       <Product name={products[0].name} price={products[0].price}></Product>
       <Nayok></Nayok>
@@ -25,6 +26,7 @@ function App() {
     </div>
   );
 }
+
 
 function Product(props){
   const proudctStyle={
@@ -37,6 +39,7 @@ function Product(props){
     boxSizing:'border-box'
   }
 
+  
   // const {name,price}=props.Product;
   // console.log(name,price);
   // console.log(props);
@@ -71,12 +74,33 @@ function Nayok(){
 
 function Counter(){
   const [count, setCount]=useState(0);
-  const handleAdd=()=>console.log('clicked')
+  const handleAdd=()=>{
+    //setCount(count+1);//this is the advance method ....
+    const newCount = count+1;//This was the simple method for better understanding ....
+    setCount(newCount);
+  }
+
   return(
   <div>
     <h1>Count : {count} </h1>
-    <button onClick={handleAdd}> Add </button>
+    <button onClick={handleAdd} style={{margin:'5px', padding:'5px'}}> Add </button>
+    {/* Instead of doing this decrease inside the handler we can directly set the count function.... */}
+    <button onClick={()=>setCount(count-1)} style={{margin:'5px', padding:'5px'}}> Remove </button>
   </div>
+  )
+}
+
+function Users(){
+  const [users,setUsers]=useState([]);
+
+  useEffect(()=>{
+    console.log('Calling Effect....');
+  })
+
+  return(
+    <div>
+      <h3>...Dynamic Users... </h3>
+    </div>
   )
 }
 

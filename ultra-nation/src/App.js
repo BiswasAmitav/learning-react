@@ -23,11 +23,12 @@ function App() {
   return (
     <div className="App">
       <h1>{countries.length} Country is loaded . </h1>
-      <ul>
-        {/* {
-          countries.map(country => country.;
-        } */}
-      </ul>
+      <h2>Data is retriving from Json api</h2>
+      <ol>
+        {
+          countries.map(country => <li>Hello </li>)
+        }
+      </ol>
     </div>
   );
 }
